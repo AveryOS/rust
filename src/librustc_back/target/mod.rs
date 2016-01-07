@@ -183,6 +183,8 @@ supported_targets! {
 
     ("x86_64-sun-solaris", x86_64_sun_solaris),
 
+    ("x86_64-pc-avery", x86_64_pc_avery),
+
     ("x86_64-pc-windows-gnu", x86_64_pc_windows_gnu),
     ("i686-pc-windows-gnu", i686_pc_windows_gnu),
 
