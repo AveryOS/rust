@@ -9,6 +9,7 @@
 // except according to those terms.
 
 #![cfg_attr(target_os = "nacl", allow(dead_code))]
+#![cfg_attr(target_os = "avery", allow(dead_code))]
 
 use env;
 use io::prelude::*;

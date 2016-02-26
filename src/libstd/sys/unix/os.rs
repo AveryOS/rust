@@ -256,7 +256,7 @@ pub fn current_exe() -> io::Result<PathBuf> {
     }
 }
 
-#[cfg(any(target_os = "linux", target_os = "android", target_os = "emscripten"))]
+#[cfg(any(target_os = "linux", target_os = "android", target_os = "avery", target_os = "emscripten"))]
 pub fn current_exe() -> io::Result<PathBuf> {
     ::fs::read_link("/proc/self/exe")
 }
@@ -475,6 +475,7 @@ pub fn home_dir() -> Option<PathBuf> {
     #[cfg(any(target_os = "android",
               target_os = "ios",
               target_os = "nacl",
+              target_os = "avery",
               target_os = "emscripten"))]
     unsafe fn fallback() -> Option<OsString> { None }
     #[cfg(not(any(target_os = "android",

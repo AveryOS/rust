@@ -8,6 +8,7 @@
 // option. This file may not be copied, modified, or distributed
 // except according to those terms.
 
+#[cfg(not(target_os = "avery"))]
 pub use self::imp::print;
 
 #[cfg(any(target_os = "macos", target_os = "ios",
@@ -16,6 +17,6 @@ pub use self::imp::print;
 mod imp;
 
 #[cfg(not(any(target_os = "macos", target_os = "ios",
-              target_os = "emscripten")))]
+              target_os = "emscripten", target_os = "avery")))]
 #[path = "gnu.rs"]
 mod imp;

@@ -302,6 +302,7 @@ impl DirEntry {
               target_os = "ios",
               target_os = "linux",
               target_os = "emscripten",
+              target_os = "avery",
               target_os = "android",
               target_os = "solaris",
               target_os = "haiku"))]
@@ -332,6 +333,7 @@ impl DirEntry {
         }
     }
     #[cfg(any(target_os = "android",
+              target_os = "avery",
               target_os = "linux",
               target_os = "emscripten",
               target_os = "haiku"))]

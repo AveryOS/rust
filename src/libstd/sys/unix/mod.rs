@@ -20,6 +20,7 @@ use libc;
 #[cfg(target_os = "haiku")]     pub use os::haiku as platform;
 #[cfg(target_os = "ios")]       pub use os::ios as platform;
 #[cfg(target_os = "linux")]     pub use os::linux as platform;
+#[cfg(target_os = "avery")]     pub use os::avery as platform;
 #[cfg(target_os = "macos")]     pub use os::macos as platform;
 #[cfg(target_os = "nacl")]      pub use os::nacl as platform;
 #[cfg(target_os = "netbsd")]    pub use os::netbsd as platform;

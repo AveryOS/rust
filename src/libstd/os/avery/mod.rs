@@ -8,22 +8,9 @@
 // option. This file may not be copied, modified, or distributed
 // except according to those terms.
 
-pub use self::imp::*;
+//! Avery-specific definitions
 
-#[cfg(not(any(all(target_os = "ios", target_arch = "arm"), target_os = "avery")))]
-#[path = "gcc_s.rs"]
-mod imp;
-#[cfg(all(target_os = "ios", target_arch = "arm"))]
-#[path = "backtrace_fn.rs"]
-mod imp;
+#![stable(feature = "raw_ext", since = "1.1.0")]
 
-#[cfg(target_os = "avery")]
-mod imp {
-	use io;
-	use io::prelude::*;
-	pub fn write(w: &mut Write) -> io::Result<()> {
-	    writeln!(w, "stack backtrace unsupported")?;
-	    Ok(())
-	}
-
-}
+pub mod raw;
+pub mod fs;

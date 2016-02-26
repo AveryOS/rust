@@ -130,6 +130,7 @@ impl Thread {
     }
     #[cfg(any(target_env = "newlib",
               target_os = "solaris",
+              target_os = "avery",
               target_os = "haiku",
               target_os = "emscripten"))]
     pub fn set_name(_name: &CStr) {

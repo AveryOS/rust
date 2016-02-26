@@ -26,9 +26,6 @@
 //! symbol, but that caused Debian to detect an unnecessarily strict versioned
 //! dependency on libc6 (#23628).
 
-use libc;
-
-use ffi::CString;
 use marker;
 use mem;
 use sync::atomic::{AtomicUsize, Ordering};
@@ -70,7 +67,16 @@ impl<F> Weak<F> {
     }
 }
 
+#[cfg(target_os = "avery")]
+unsafe fn fetch(_name: &str) -> usize {
+    return 0
+}
+
+#[cfg(not(target_os = "avery"))]
 unsafe fn fetch(name: &str) -> usize {
+    use libc;
+    use ffi::CString;
+
     let name = match CString::new(name) {
         Ok(cstr) => cstr,
         Err(..) => return 0,
