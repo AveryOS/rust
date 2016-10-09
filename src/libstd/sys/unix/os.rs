@@ -481,6 +481,7 @@ pub fn home_dir() -> Option<PathBuf> {
     #[cfg(not(any(target_os = "android",
                   target_os = "ios",
                   target_os = "nacl",
+                  target_os = "avery",
                   target_os = "emscripten")))]
     unsafe fn fallback() -> Option<OsString> {
         #[cfg(not(target_os = "solaris"))]
